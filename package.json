@@ -1,6 +1,6 @@
 {
   "homepage": "http://themis-c.github.io/Home",
-  "name": "homepage",
+  "name": "home",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
