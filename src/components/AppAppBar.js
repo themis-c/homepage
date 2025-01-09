@@ -9,12 +9,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+
 import { Link } from "react-router-dom";
 import photoCV from "../images/photo-cv.jpg";
 
-const pages = ["Home"];
+const pages = ["Home", "Experiences", "Technical-Stack"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function AppAppBar() {
@@ -42,9 +42,27 @@ function AppAppBar() {
       sx={{ backgroundColor: "white", color: "black", boxShadow: "none" }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 0, paddingTop: 1 }}>
+        <Toolbar
+          disableGutters
+          sx={{
+            display: "flex",
+            justifyContent: "space-between", // Space out the child elements
+            alignItems: "center", // Center align vertically
+          }}
+        >
+          <Box
+            sx={{
+              flexGrow: 0,
+              paddingTop: 1,
+              display: "flex", // Aligns items in a row
+              alignItems: "center", // Centers items vertically
+              gap: 2,
+            }}
+          >
             <Avatar alt="TC" src={photoCV} sx={{ width: 80, height: 80 }} />
+            <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
+              Themis Cocomazzi
+            </Typography>
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
@@ -115,7 +133,7 @@ function AppAppBar() {
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              marginLeft: "auto",
+              justifyContent: "flex-end", // Align content to the right
             }}
           >
             {pages.map((page) => (
