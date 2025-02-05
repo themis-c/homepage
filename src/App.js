@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import AppAppBar from "./components/AppAppBar";
 import Home from "./components/Home";
 function App({ Component, pageProps }) {
@@ -7,7 +7,7 @@ function App({ Component, pageProps }) {
     <div>
       <AppAppBar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Navigate to="/home" />}></Route>
         <Route path="/home" element={<Home />}></Route>
       </Routes>
     </div>
