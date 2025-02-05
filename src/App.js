@@ -7,6 +7,7 @@ function App({ Component, pageProps }) {
     <div>
       <AppAppBar />
       <Routes>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
       </Routes>
     </div>
